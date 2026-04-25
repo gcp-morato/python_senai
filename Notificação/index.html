@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENAI SP - Design Visceral Industrial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Paleta de Cores SENAI SP */
+        :root {
+            --senai-red: #ff0000;        /* Vermelho Vibrante */
+            --senai-blue: #0054a6;       /* Azul Institucional */
+            --senai-white: #ffffff;
+            --senai-gray: #f4f4f4;
+            --senai-dark: #1a1a1a;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: var(--senai-white);
+            color: var(--senai-dark);
+            overflow-x: hidden;
+        }
+
+        /* Navegação Superior */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 3px solid var(--senai-red);
+        }
+
+        nav .logo {
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--senai-blue);
+            text-decoration: none;
+        }
+
+        nav .logo span {
+            color: var(--senai-red);
+        }
+
+        nav .menu a {
+            color: var(--senai-blue);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        nav .menu a:hover {
+            color: var(--senai-red);
+        }
+
+        /* Header Visceral (Impacto) */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 10%;
+            background: linear-gradient(135deg, var(--senai-blue) 0%, #002d5a 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            right: -10%;
+            width: 60%;
+            height: 120%;
+            background: var(--senai-red);
+            transform: skewX(-15deg);
+            z-index: 0;
+        }
+
+        header h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            line-height: 1;
+            z-index: 1;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            z-index: 1;
+            max-width: 600px;
+            font-weight: 300;
+        }
+
+        /* Seção de Conteúdo */
+        section {
+            padding: 100px 10%;
+            background-color: var(--senai-gray);
+        }
+
+        article {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            background: white;
+            padding: 50px;
+            border-radius: 4px;
+            box-shadow: 20px 20px 0px var(--senai-blue);
+            transition: var(--transition);
+        }
+
+        article:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 25px 25px 0px var(--senai-red);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--senai-blue);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            border-left: 8px solid var(--senai-red);
+            padding-left: 15px;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        /* Botão */
+        .btn-senai {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: var(--senai-red);
+            color: white;
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-senai:hover {
+            background-color: var(--senai-blue);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--senai-dark);
+            color: white;
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        footer p {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        footer .social-links {
+            margin-bottom: 20px;
+        }
+
+        footer .social-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer .social-links a:hover {
+            color: var(--senai-red);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header::before { display: none; }
+            article { grid-template-columns: 1fr; padding: 30px; }
+            header h1 { font-size: 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">ETEC <span>SP</span></a>
+        <div class="menu">
+            <a href="#sobre">Cursos</a>
+            <a href="#tecnologia">Tecnologia</a>
+            <a href="#unidades">Unidades</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>A FORÇA DA<br>INDÚSTRIA</h1>
+        <p>Transformando o futuro de São Paulo através da educação profissional e inovação tecnológica.</p>
+        <a href="#sobre" class="btn-senai">Inicie sua Carreira</a>
+    </header>
+
+    <section id="sobre">
+        <article>
+            <div>
+                <h2>Inovação que Transforma</h2>
+                <p>O SENAI-SP é o maior complexo de educação profissional da América Latina. Nosso foco é preparar você para os desafios da Indústria 4.0 com tecnologia de ponta e infraestrutura de primeiro mundo.</p>
+                <p>O design visceral desta plataforma reflete a precisão e a energia do ambiente fabril moderno.</p>
+                <a href="#" class="btn-senai">Saiba Mais</a>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Tecnologia Industrial" style="width: 100%; border-radius: 4px;">
+            </div>
+        </article>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#">FACEBOOK</a>
+            <a href="#">INSTAGRAM</a>
+            <a href="#">LINKEDIN</a>
+            <a href="#">YOUTUBE</a>
+        </div>
+        <p>&copy; 2023 SENAI São Paulo - Serviço Nacional de Aprendizagem Industrial.</p>
+        <p>Pelo futuro do trabalho.</p>
+    </footer>
+
+</body>
+</html>
