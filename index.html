@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio | Dev Aprendiz</title>
+    <!-- Fonte Inter (similar à San Francisco da Apple) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --text-color: #ffffff;
+            --accent-color: #0071e3; /* Azul Apple */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            background-attachment: fixed;
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container Principal (Efeito Glass) */
+        .glass-container {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 40px;
+            width: 100%;
+            max-width: 900px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Perfil */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--glass-border);
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 5px;
+        }
+
+        .tagline {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        /* Sobre Mim */
+        .section-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .about-text {
+            line-height: 1.6;
+            color: #e2e8f0;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        /* Projetos e Skills */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            padding: 20px;
+            border-radius: 20px;
+            transition: transform 0.3s ease, background 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .card i {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            font-weight: 300;
+        }
+
+        /* Redes Sociais */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.8rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Animação */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .glass-container {
+                padding: 20px;
+            }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glass-container">
+        <header class="header">
+            <!-- Substitua pela URL da sua imagem do GitHub -->
+            <img src="https://github.com/SEU_USUARIO.png" alt="Foto de Perfil" class="profile-img">
+            <h1>Olá, eu sou [Seu Nome]</h1>
+            <p class="tagline">Estudante & Aspirante a Desenvolvedor</p>
+        </header>
+
+        <section>
+            <h2 class="section-title">Sobre Mim</h2>
+            <p class="about-text">
+                Sou um jovem estudante apaixonado por tecnologia e pela arte de criar coisas através do código. 
+                Atualmente, estou mergulhando no universo da programação, explorando linguagens e frameworks para construir soluções digitais criativas. 
+                Meu foco é aprender constantemente e transformar café em linhas de código funcionais. 🚀
+            </p>
+        </section>
+
+        <section>
+            <h2 class="section-title">O que estou aprendendo</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fa-brands fa-html5"></i>
+                    <h3>Front-end</h3>
+                    <p>Criando interfaces modernas e responsivas com HTML, CSS e JavaScript.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-code-branch"></i>
+                    <h3>Git & GitHub</h3>
+                    <p>Versionamento de código e colaboração em projetos open source.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <h3>Lógica</h3>
+                    <p>Resolvendo problemas e estruturando algoritmos eficientes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top: 40px;">
+            <h2 class="section-title">Meus Projetos</h2>
+            <div class="grid">
+                <!-- Projeto 1 -->
+                <a href="https://github.com/SEU_USUARIO/PROJETO1" target="_blank" class="card">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <h3>Projeto Alpha</h3>
+                    <p>Um pequeno projeto feito para praticar conceitos de layout e UX.</p>
+                </a>
+                <!-- Projeto 2 -->
+                <a href="https://github.com/SEU_USUARIO/PROJETO2" target="_blank" class="card">
+                    <i class="fa-solid fa-terminal"></i>
+                    <h3>Scripts Úteis</h3>
+                    <p>Repositório com automações simples em Python/JS para o dia a dia.</p>
+                </a>
+            </div>
+        </section>
+
+        <footer class="social-links">
+            <a href="https://github.com/SEU_USUARIO" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://linkedin.com/in/SEU_LINKEDIN" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:seuemail@exemplo.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        </footer>
+    </div>
+
+</body>
+</html>
